@@ -78,7 +78,7 @@
 
 		// With activity or unanswered, to compare results
 		if (type === "withActivity" || type === "unanswered") {
-			document.querySelector("#questions-results").innerHTML = percentageUnanswered;
+			document.querySelector("#questions-results").innerHTML = percentageUnanswered + "% unanswered";
 		}
 
 		// Unanswered

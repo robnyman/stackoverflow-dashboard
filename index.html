@@ -33,19 +33,11 @@
                 <form id="selection-form">
                     <label for="stack-overflow-tag">Tag:</label>
                     <input id="stack-overflow-tag" list="popular-tags">
-
                     <datalist id="popular-tags">
                         <option value="Java">
                         <option value="JavaScript">
                         <option value="HTML">
                     </datalist>
-
-                    <!-- <select id="stack-overflow-tag">
-                        <option value="firefox-os" selected>firefox-os</option>
-                        <option value="firefox">firefox</option>
-                        <option value="firefox-developer-tools">firefox-developer-tools</option>
-                        <option value="html5-apps">html5-apps</option>
-                    </select> -->
 
                     <label for="start-date">Dates</label>
                     <input type="date" id="start-date" value="2014-04-01">
@@ -75,7 +67,7 @@
                         </tr>
                         <tr>
                             <th>Results</th>
-                            <td><span id="questions-results">100</span>% unanswered</td>
+                            <td id="questions-results"></td>
                         </tr>
                         <tr>
                             <td colspan="2">* = (must have at least one upvoted answer to be considered answered)</td>
