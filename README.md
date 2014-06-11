@@ -5,7 +5,7 @@ A dashboard to check the popularity and engagement for tags on Stack Overflow. B
 
 ## Features
 
-Numbers and developer behavior are always interesting areas, especially to spot trends, common questions, related areas and more. As Stack Overflow is one of the de facto channel where developers ask questions to solve problems I find it very interesting to look at those numbers and see possible correlations.
+Numbers and developer behavior are always interesting areas, especially to spot trends, common questions, related areas and more. As Stack Overflow is one of the de facto channels where developers ask questions to solve problems I find it very interesting to look at those numbers and see possible correlations.
 
 [![](https://hacks.mozilla.org/wp-content/uploads/2014/06/stack-overflow-dashboard-500.png)](http://robnyman.github.io/stackoverflow-dashboard/)
 
@@ -34,7 +34,7 @@ The general mindset when building up the dashboard:
 1. Create a simple HTML form with tag, date period input
 2. Use a simple XMLHttpRequest to get the most popular tags for the `<datalist>` element
 3. For any request, use the basic XHR to get the data directly in JSON
-4. Depending on the requested data - multiple requests are needed to fill the dahboard - parse the returned JSON and present the results
+4. Depending on the requested data - multiple requests are needed to fill the dashboard - parse the returned JSON and present the results
 
 ### API methods being used
 
