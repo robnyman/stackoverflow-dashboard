@@ -66,7 +66,7 @@
 				popularTagsResults = "";
 			for (var i=0,l=popularTags.length, tag; i<l; i++) {
 				tag = popularTags[i];
-				popularTagsResults += '<option value="' + tag["name"] + '">';
+				popularTagsResults += "<option value=\"" + tag.name + "\">";
 			}
 			popularTagsList.innerHTML = popularTagsResults;
 		}		
@@ -91,12 +91,12 @@
 				var totalUnanswereds = (allUnanswered.length > 10)? 10 : allUnanswered.length,
 					unansweredResults = "<ul>";
 
-				for (var i=0,l=totalUnanswereds, question; i<l; i++) {
-					question = allUnanswered[i];
+				for (var j=0,jl=totalUnanswereds, question; j<jl; j++) {
+					question = allUnanswered[j];
 					unansweredResults += "<li>" + 
-									'<a href="' + question["link"] + '">' +
-									question["title"] + "</a><br>" + 
-									"<small>" + question["tags"].toString(", ") + "</small></li>";
+									"<a href=\"" + question.link + "\">" +
+									question.title + "</a><br>" + 
+									"<small>" + question.tags.toString(", ") + "</small></li>";
 				}
 				unansweredResults += "</ul>";
 				unanswered.innerHTML = unansweredResults;
@@ -111,14 +111,14 @@
 				var totalTopAnswerers = (allTopAnswerers.length > 5)? 5 : allTopAnswerers.length,
 					topAnswerersResults = "<ul>";
 
-				for (var i=0,l=totalTopAnswerers, user; i<l; i++) {
-					user = allTopAnswerers[i];
+				for (var k=0,kl=totalTopAnswerers, answerer; k<kl; k++) {
+					answerer = allTopAnswerers[k];
 					topAnswerersResults += "<li>" + 
-										'<a href="' + user.user["link"] + '">' +
-										'<img src="' + user.user["profile_image"] + '" alt="">' + 
-										user.user["display_name"] + "</a>" + ", Score: " + user["score"] + " (" + 
-										user["post_count"] + " question" + ((user["post_count"] > 1)? "s" : "") + ")</li>";
-				};
+										"<a href=\"" + answerer.user.link + "\">" +
+										"<img src=\"" + answerer.user.profile_image + "\" alt=\"\">" + 
+										answerer.user.display_name + "</a>" + ", Score: " + answerer.score + " (" + 
+										answerer.post_count + " question" + ((answerer.post_count > 1)? "s" : "") + ")</li>";
+				}
 				topAnswerersResults += "</ul>";
 				topAnswerers.innerHTML = topAnswerersResults;
 			}
@@ -132,13 +132,13 @@
 				var totalTopAskers = (allTopAskers.length > 5)? 5 : allTopAskers.length,
 					topAskersResults = "<ul>";
 
-				for (var i=0,l=totalTopAskers, user; i<l; i++) {
-					user = allTopAskers[i];
+				for (var m=0,ml=totalTopAskers, asker; m<ml; m++) {
+					asker = allTopAskers[m];
 					topAskersResults += "<li>" + 
-										'<a href="' + user.user["link"] + '">' +
-										'<img src="' + user.user["profile_image"] + '" alt="">' + 
-										user.user["display_name"] + "</a>" + ", " + user["post_count"] + " question" + ((user["post_count"] > 1)? "s" : "") + "</li>";
-				};
+										"<a href=\"" + asker.user.link + "\">" +
+										"<img src=\"" + asker.user.profile_image + "\" alt=\"\">" + 
+										asker.user.display_name + "</a>" + ", " + asker.post_count + " question" + ((asker.post_count > 1)? "s" : "") + "</li>";
+				}
 				topAskersResults += "</ul>";
 				topAskers.innerHTML = topAskersResults;
 			}
@@ -152,12 +152,12 @@
 				var totalFaqs = (allFaq.length > 10)? 10 : allFaq.length,
 					faqResults = "<ul>";
 
-				for (var i=0,l=totalFaqs, question; i<l; i++) {
-					question = allFaq[i];
+				for (var n=0,nl=totalFaqs, faqQuestion; n<nl; n++) {
+					faqQuestion = allFaq[n];
 					faqResults += "<li>" + 
-									'<a href="' + question["link"] + '">' +
-									question["title"] + "</a><br>" + 
-									"<small>" + question["tags"].toString(", ") + "</small></li>";
+									"<a href=\"" + faqQuestion.link + "\">" +
+									faqQuestion.title + "</a><br>" + 
+									"<small>" + faqQuestion.tags.toString(", ") + "</small></li>";
 				}
 				faqResults += "</ul>";
 				faq.innerHTML = faqResults;
@@ -172,11 +172,11 @@
 				var totalRelatedTags = (allRelatedTags.length > 10)? 10 : allRelatedTags.length,
 					relatedTagsResults = "<ul>";
 
-				for (var i=0,l=totalRelatedTags, tag; i<l; i++) {
-					tag = allRelatedTags[i];
+				for (var o=0,ol=totalRelatedTags, relatedTag; o<ol; o++) {
+					relatedTag = allRelatedTags[o];
 					relatedTagsResults += "<li>" + 
-									'<a href="http://stackoverflow.com/questions/tagged/' + tag["name"] + '">' +
-									tag["name"] + "</a></li>";
+									"<a href=\"http://stackoverflow.com/questions/tagged/" + relatedTag.name + "\">" +
+									relatedTag.name + "</a></li>";
 				}
 				relatedTagsResults += "</ul>";
 				relatedTags.innerHTML = relatedTagsResults;
@@ -196,10 +196,10 @@
 				//console.log("Type: " + type);
 				//console.log(xhr.response);
 				var response = xhr.response,
-					quotaRemaining = response["quota_remaining"];
+					quotaRemaining = response.quota_remaining;
 
-				if (response["error_message"]) {
-					showErrors(response["error_name"], response["error_message"]);
+				if (response.error_message) {
+					showErrors(response.error_name, response.error_message);
 				}
 				else {
 					questions[type] = response;
@@ -216,7 +216,7 @@
 		xhr.open("GET", url, true);
 		xhr.responseType = "json";
 		xhr.send(null);
-	};
+	}
 
 	function getQuestionsWithActivity () {
 		// All questions for a certain time period - http://api.stackexchange.com/docs/search
