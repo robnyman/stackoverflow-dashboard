@@ -1,0 +1,122 @@
+body {
+  position: relative;
+  font: 14px Helvetica, sans-serif;
+}
+
+img {
+  border: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+h4 {
+    font-size: 12px;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+footer {
+  border-top: 1px solid #000;
+  padding-top: 10px;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+input[type=date] {
+  width: 70px;
+}
+
+input[type=submit] {
+  width: 200px;
+}
+
+th {
+  text-align: left;
+  width: 100px;
+  padding: 5px 20px 5px 0;
+}
+
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 5px;
+}
+
+#container {
+  overflow: hidden;
+  width: 800px;
+  margin: 0 auto;
+}
+
+#main { 
+  overflow: hidden;
+  padding: 1rem 1rem 6rem 1rem;
+}
+
+.app-information {
+  margin-bottom: 30px;
+}
+
+#main h2 {
+    margin: 0 0 1rem;
+}
+
+#main img {
+    max-width: 100%;
+}
+
+#error {
+  color: #f00;
+}
+
+#results {
+  overflow: hidden;
+  width: 100%;
+}
+
+#results section {
+  float: left;
+  width: 340px;
+  border-top: 1px solid #000;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+#results section:nth-child(odd) {
+  clear: both;
+  margin-right: 80px;
+}
+
+#top-answerers li,
+#unanswered li,
+#top-askers li,
+#faq li,
+#related-tags li {
+  margin-bottom: 5px;
+}
+
+#top-answerers img,
+#top-askers img {
+  width: 32px;
+  margin-right: 5px;
+  vertical-align: middle;
+}

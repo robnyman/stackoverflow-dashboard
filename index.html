@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <title>Stack Overflow dashboard</title>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <section role="region">
+            <header>
+                <h1>
+                    <img src="images/stack-overflow-logo.png" alt=""> dashboard
+                </h1>
+            </header>
+        </section>
+
+
+        <div id="main">
+            <p>
+                This is to get the statistics for tags on <a href="http://stackoverflow.com/">Stack Overflow</a>.<br>
+                Remaining requests for you today: <span id="remaining-requests"></span>
+            </p>
+            <p id="error">
+                
+            </p>
+
+            <div>
+                <form id="selection-form">
+                    <label for="stack-overflow-tag">Tag:</label>
+                    <input id="stack-overflow-tag" list="popular-tags">
+
+                    <datalist id="popular-tags">
+                        <option value="Java">
+                        <option value="JavaScript">
+                        <option value="HTML">
+                    </datalist>
+
+                    <!-- <select id="stack-overflow-tag">
+                        <option value="firefox-os" selected>firefox-os</option>
+                        <option value="firefox">firefox</option>
+                        <option value="firefox-developer-tools">firefox-developer-tools</option>
+                        <option value="html5-apps">html5-apps</option>
+                    </select> -->
+
+                    <label for="start-date">Dates</label>
+                    <input type="date" id="start-date" value="2014-04-01">
+                    <input type="date" id="end-date" value="2014-05-01">
+
+                    <label for="time-period">Period</label>
+                    <select id="time-period">
+                        <option value="month" selected>Month</option>
+                        <option value="all_time">All time</option>
+                    </select>
+
+                    <input type="submit" id="check-reports" value="Check">
+                </form>
+            </div>
+
+            <div id="results">
+                <section>
+                    <h2>Questions (based on dates above)</h2>
+                    <table>
+                        <tr>
+                            <th>With activity</th>
+                            <td id="questions-with-activity"></td>
+                        </tr>
+                        <tr>
+                            <th>Unanswered *</th>
+                            <td id="unanswered-questions"></td>
+                        </tr>
+                        <tr>
+                            <th>Results</th>
+                            <td><span id="questions-results">100</span>% unanswered</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">* = (must have at least one upvoted answer to be considered answered)</td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Top answerers (based on time period above)</h2>
+                    <div id="top-answerers"></div>
+                </section>
+
+                <section>
+                    <h2>Unanswered questions *</h2>
+                    <div id="unanswered"></div>
+                </section>
+
+                <section>
+                    <h2>Frequently asked questions</h2>
+                    <div id="faq"></div>
+                </section>
+
+                <section>
+                    <h2>Related tags</h2>
+                    <div id="related-tags"></div>
+                </section>
+
+                <section>
+                    <h2>Top askers (based on time period above)</h2>
+                    <div id="top-askers"></div>
+                </section>                
+            </div>
+        </div>
+
+        <footer>
+            <p><small>* = (must have at least one upvoted answer to be considered answered)</small></p>
+            <p>Code available in the <a href="https://github.com/robnyman/stackoverflow-dashboard">stackoverflow-dashboard GitHub repository</a>.</p>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="js/base.js"></script>
+
+</body>
+</html>
