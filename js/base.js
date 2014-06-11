@@ -264,8 +264,6 @@
 		getItems("popularTags", "http://api.stackexchange.com/2.2/tags?pagesize=100&order=desc&sort=popular&site=stackoverflow");
 	}
 
-	document.querySelector("#check-reports").onclick = checkReports;
-
-	// Run automatically at page load
+	// Run automatically at page load to pre-populate the <datalist> element
 	getPopularTags();
 })();
